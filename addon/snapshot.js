@@ -33,7 +33,7 @@ export function percySnapshot(name, options) {
   }
 
   try {
-    var percy = new window.Percy.PercyAgentClient(
+    var percy = new Percy.PercyAgentClient(
       'ember-percy',
       getNativeXhr(),
       (documentClone) => {
