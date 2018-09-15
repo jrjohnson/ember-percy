@@ -24,6 +24,8 @@ export function percySnapshot(name, options) {
   // and Percy is not enabled anyway).
   if (!window.Testem) { return; }
 
+  if (process.env.PERCY_ENABLE == '0') { return; }
+
   // Automatic name generation for QUnit tests by passing in the `assert` object.
   if (name.test && name.test.module && name.test.module.name && name.test.testName) {
     name = `${name.test.module.name} | ${name.test.testName}`;
