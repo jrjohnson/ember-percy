@@ -50,8 +50,8 @@ export function percySnapshot(name, options) {
       percy.snapshot(name, options);
     });
   } catch (e) {
+    console.log('WARNING! percy-agent is not started. See https://docs.percy.io/docs for help.');
     console.error(e.message);
     console.error(e.stack);
-    console.log('WARNING! Ensure percy-agent has been started. To start, run "percy-agent start" before running tests.');
   }
 }
