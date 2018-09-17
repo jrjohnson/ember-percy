@@ -19,13 +19,7 @@ function copyAttributesToBodyCopy(bodyCopy, testingContainer) {
   });
 }
 
-export function percySnapshot(name, options) {
-  // Skip if Testem is not available (we're probably running from `ember server`
-  // and Percy is not enabled anyway).
-  if (!window.Testem) { return; }
-
-  if (process.env.PERCY_ENABLE == '0') { return; }
-
+function buildFullName(name) {
   // Automatic name generation for QUnit tests by passing in the `assert` object.
   if (name.test && name.test.module && name.test.module.name && name.test.testName) {
     name = `${name.test.module.name} | ${name.test.testName}`;
@@ -33,6 +27,16 @@ export function percySnapshot(name, options) {
     // Automatic name generation for Mocha tests by passing in the `this.test` object.
     name = name.fullTitle();
   }
+
+  return name;
+}
+
+export function percySnapshot(name, options) {
+  // Skip if Testem is not available (we're probably running from `ember server`
+  // and Percy is not enabled anyway).
+  if (!window.Testem || process.env.PERCY_ENABLE == '0') { return; }
+
+  var fullName = buildFullName(name);
 
   try {
     var percy = new PercyAgent(
@@ -47,7 +51,7 @@ export function percySnapshot(name, options) {
     );
 
     run(function () {
-      percy.snapshot(name, options);
+      percy.snapshot(fullName, options);
     });
   } catch (e) {
     console.log('WARNING! percy-agent is not started. See https://docs.percy.io/docs for help.');
