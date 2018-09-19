@@ -40,7 +40,7 @@ export function percySnapshot(name, options) {
   if (!window.Testem) { return; }
 
   // Skip if PERCY_ENABLE is set to 0
-  if (config.env.PERCY_ENABLE === '0') { return; }
+  if (config.percy.PERCY_ENABLE === '0') { return; }
 
   var snapshotOptions = options || {};
 
