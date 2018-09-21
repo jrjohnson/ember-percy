@@ -39,8 +39,8 @@ export function percySnapshot(name, options) {
   // and Percy is not enabled anyway).
   if (!window.Testem) { return; }
 
-  // Skip if PERCY_ENABLE is set to 0
-  if (config.percy.PERCY_ENABLE === '0') { return; }
+  // PERCY_ENABLE=0 can be set to disable Percy from running
+  if (config.percy.enable === '0') { return; }
 
   var snapshotOptions = options || {};
 
