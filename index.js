@@ -8,43 +8,7 @@ var Environment = require('percy-client/dist/environment');
 module.exports = {
   name: 'ember-percy',
 
-  _clientInfo: function() {
-    if(!this._clientInfoCache) {
-      var version = require('./package.json').version;
-      this._clientInfoCache = `${this.name}/${version}`;
-    }
 
-    return this._clientInfoCache;
-  },
-
-  _environmentInfo: function() {
-    if(!this._environmentInfoCache) {
-      this._environmentInfoCache = [
-        `ember/${this._emberSourceVersion()}`,
-        `ember-cli/${this._emberCliVersion()}`
-      ].join('; ');
-    }
-
-    return this._environmentInfoCache;
-  },
-
-  _emberSourceVersion: function() {
-    try {
-      // eslint-disable-next-line node/no-unpublished-require
-      return require('ember-source/package.json').version;
-    } catch (e) {
-      return 'unknown';
-    }
-  },
-
-  _emberCliVersion: function() {
-    try {
-      // eslint-disable-next-line node/no-unpublished-require
-      return require('ember-cli/lib/utilities/version-utils').emberCLIVersion();
-    } catch (e) {
-      return 'unknown';
-    }
-  },
 
   included: function(app) {
     this._super.included(app);
@@ -62,7 +26,7 @@ module.exports = {
   contentFor: function(type) {
     // Disable finalize injection if Percy is explicitly disabled or if not in an 'ember test' run.
     // This must be handled separately than the outputReady disabling below.
-    if (process.env.PERCY_ENABLE === '0' || process.env.EMBER_ENV !== 'test') {
+    if (process.env.PERCY_ENABLE == '0' || process.env.EMBER_ENV !== 'test') {
       return;
     }
 
