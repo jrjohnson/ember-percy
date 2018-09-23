@@ -34,7 +34,7 @@ function _emberCliVersion() {
 module.exports = function(environment, appConfig) {
   appConfig.percy = process.env.percy || {};
   appConfig.percy.enable = process.env.PERCY_ENABLE || '1';
-  appConfig.percy.clientInfo = clientInfo() || 'ember-percy';
+  appConfig.percy.clientInfo = clientInfo();
   appConfig.percy.environmentInfo = environmentInfo();
 
   return {};

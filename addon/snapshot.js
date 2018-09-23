@@ -51,7 +51,7 @@ export function percySnapshot(name, options) {
   var fullName = buildFullName(name);
 
   try {
-    var percy = new PercyAgent({
+    var percy = new window.PercyAgent({
       clientInfo: config.percy.clientInfo,
       environmentInfo: config.percy.environmentInfo,
       xhr: getNativeXhr(),

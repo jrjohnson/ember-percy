@@ -13,10 +13,10 @@ interface MochaAssert {
 }
 
 interface SnapshotOptions {
-  breakpoints?: string[];
   scope?: string;
-  enableJavaScript?: boolean;
-  widths?: string[];
+  enableJavascript?: boolean,
+  widths?: number[],
+  minimumHeight?: number,
 }
 
 type SnapshotFunction = (
