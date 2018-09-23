@@ -51,16 +51,17 @@ export function percySnapshot(name, options) {
   var fullName = buildFullName(name);
 
   try {
-    var percy = new PercyAgent(
-      'ember-percy',
-      getNativeXhr(),
-      (documentClone) => {
+    var percy = new PercyAgent({
+      clientInfo: config.percy.clientInfo,
+      environmentInfo: config.percy.environmentInfo,
+      xhr: getNativeXhr(),
+      domTransformation: (documentClone) => {
         let testingContainer = documentClone.querySelector('#ember-testing');
         documentClone.querySelector('body').innerHTML = testingContainer.innerHTML;
 
         return documentClone;
       }
-    );
+    });
 
     run(function () {
       percy.snapshot(fullName, snapshotOptions);
