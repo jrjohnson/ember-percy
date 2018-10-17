@@ -67,7 +67,7 @@ export function percySnapshot(name, options) {
       percy.snapshot(fullName, snapshotOptions);
     });
   } catch (e) {
-    console.log('WARNING! percy-agent is not started. See https://docs.percy.io/docs for help.');
+    console.log('WARNING! percy is not started. See https://docs.percy.io/docs for help.');
     console.error(e.message);
     console.error(e.stack);
   }

@@ -56,7 +56,7 @@
     "ember-addon"
   ],
   "dependencies": {
-    "@percy/agent": "0.0.44",
+    "@percy/agent": "0.0.45",
     "ember-cli-babel": "^6.10.0"
   },
   "ember-addon": {
