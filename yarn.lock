@@ -105,10 +105,10 @@
   resolved "https://registry.yarnpkg.com/@oclif/screen/-/screen-1.0.3.tgz#da9f3481a0e386abd36ac7c0d2fe6e1d8c1058f7"
   integrity sha512-0C/7oioV6hvJdojNPpwgV5bAKajtmaY4kP5r+robCvKHyoOdkH15zCwWXX6u9cqM9ukjzDdU1SQrJuMEh8GdGQ==
 
-"@percy/agent@0.0.46":
-  version "0.0.46"
-  resolved "https://registry.yarnpkg.com/@percy/agent/-/agent-0.0.46.tgz#72cfe55519c0c73fadc04bde05ba0cdebc4b638b"
-  integrity sha512-25YeKg4j6U55xSgkVpsAUKHwib5PqnrBUHorpxq+X2wSBrgKQ+9a4EYMI29csbwBgjIy9Mjw2/YKf3h8mScVjw==
+"@percy/agent@0.0.47":
+  version "0.0.47"
+  resolved "https://registry.yarnpkg.com/@percy/agent/-/agent-0.0.47.tgz#a3dfcc8be594838c0d10f9691e7918f0f0a35e7a"
+  integrity sha512-C24nRKrTgJAKuo5sNJlojM+B8hr3wemK9NFGJN8Jo9aszSNKHVv6Um7OdmFSMIHDFGTnpVfUJxZ+d2MUnZT5XQ==
   dependencies:
     "@oclif/command" "^1"
     "@oclif/config" "^1"
@@ -122,7 +122,7 @@
     colors "^1.3.2"
     cors "^2.8.4"
     express "^4.16.3"
-    percy-client "^3.0.0"
+    percy-client "^3.0.1"
     puppeteer "^1.7.0"
     retry-axios "^0.3.2"
     sinon "^6.1.5"
@@ -6907,10 +6907,10 @@ pend@~1.2.0:
   resolved "https://registry.yarnpkg.com/pend/-/pend-1.2.0.tgz#7a57eb550a6783f9115331fcf4663d5c8e007a50"
   integrity sha1-elfrVQpng/kRUzH89GY9XI4AelA=
 
-percy-client@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/percy-client/-/percy-client-3.0.0.tgz#86289f8224817cf550c9b21aaf994b7fa16f291d"
-  integrity sha512-XpbcDChbq6wg6P8VTtiNxm5whJgaWpTgpq2yCKI1ScoX1uPxvzg//Sn5R8W2exyPLhuIrT2tvRKnOFIoufqDGA==
+percy-client@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/percy-client/-/percy-client-3.0.1.tgz#eaa2e530b5e4e10604c501fc7e472da416f04550"
+  integrity sha512-El0u/lnV2B4uCxcqH0mLkKJMt5QAaLksn5p/xApRup92rMdMZ+QYm/oSUQEpLrWQTIa/XkgTnZlddjZ7v50fgQ==
   dependencies:
     base64-js "^1.2.3"
     bluebird "^3.5.1"
